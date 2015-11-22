@@ -17,7 +17,7 @@ class MultiLineTextInputTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 	
@@ -53,8 +53,7 @@ class MultiLineTextInputTableViewCell: UITableViewCell {
 }
 
 extension MultiLineTextInputTableViewCell: UITextViewDelegate {
-    func textViewDidChange(textView: UITextView!) {
-		
+    func textViewDidChange(textView: UITextView) {
 		let size = textView.bounds.size
 		let newSize = textView.sizeThatFits(CGSize(width: size.width, height: CGFloat.max))
 		
